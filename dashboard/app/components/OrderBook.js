@@ -38,10 +38,9 @@ export default function OrderBook({ bids, asks }) {
               {bids.length === 0 ? (
                 <tr><td colSpan="2" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)', fontStyle: 'italic' }}>Waiting...</td></tr>
               ) : bids.map((bid, i) => {
-                const percentage = (bid.volume / maxTotalVol) * 100;
                 return (
                   <tr key={`bid-${bid.price}-${i}`} style={{ position: 'relative' }}>
-                    <td style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: `${percentage}%`, background: 'var(--buy-bg)', zIndex: 0, transition: 'width 0.2s' }} />
+                    <td style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '100%', background: 'var(--buy-bg)', zIndex: 0 }} />
                     <td className="mono" style={{ position: 'relative', zIndex: 1, padding: '8px 0', color: 'var(--buy-color)', fontWeight: '500' }}>{bid.price.toFixed(2)}</td>
                     <td className="mono" style={{ position: 'relative', zIndex: 1, padding: '8px 0', textAlign: 'right' }}>{bid.volume.toLocaleString()}</td>
                   </tr>
@@ -67,10 +66,9 @@ export default function OrderBook({ bids, asks }) {
               {asks.length === 0 ? (
                 <tr><td colSpan="2" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)', fontStyle: 'italic' }}>Waiting...</td></tr>
               ) : asks.map((ask, i) => {
-                const percentage = (ask.volume / maxTotalVol) * 100;
                 return (
                   <tr key={`ask-${ask.price}-${i}`} style={{ position: 'relative' }}>
-                    <td style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${percentage}%`, background: 'var(--sell-bg)', zIndex: 0, transition: 'width 0.2s' }} />
+                    <td style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '100%', background: 'var(--sell-bg)', zIndex: 0 }} />
                     <td className="mono" style={{ position: 'relative', zIndex: 1, padding: '8px 0', color: 'var(--sell-color)', fontWeight: '500' }}>{ask.price.toFixed(2)}</td>
                     <td className="mono" style={{ position: 'relative', zIndex: 1, padding: '8px 0', textAlign: 'right' }}>{ask.volume.toLocaleString()}</td>
                   </tr>
