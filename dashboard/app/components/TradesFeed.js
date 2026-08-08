@@ -6,7 +6,7 @@ export default function TradesFeed({ trades, isConnected }) {
   // We'll apply the `animate-flash` class and rely on React re-rendering the row.
 
   return (
-    <div className="glass-panel" style={{ flex: '0 0 350px', padding: '24px', display: 'flex', flexDirection: 'column', maxHeight: '600px' }}>
+    <div className="glass-panel" style={{ flex: '0 0 450px', padding: '24px', display: 'flex', flexDirection: 'column', maxHeight: '600px' }}>
       
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
         <h2 style={{ fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
