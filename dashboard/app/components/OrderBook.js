@@ -27,14 +27,15 @@ export default function OrderBook({ bids, asks }) {
           <div style={{ padding: '8px', textAlign: 'center', background: 'var(--buy-bg)', color: 'var(--buy-color)', borderRadius: '6px', marginBottom: '12px', fontWeight: '600', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
             BIDS (BUY)
           </div>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr>
-                <th style={{ textAlign: 'left', color: 'var(--text-muted)', fontSize: '0.8rem', padding: '8px 0', borderBottom: '1px solid var(--border-card)' }}>Price</th>
-                <th style={{ textAlign: 'right', color: 'var(--text-muted)', fontSize: '0.8rem', padding: '8px 0', borderBottom: '1px solid var(--border-card)' }}>Volume</th>
-              </tr>
-            </thead>
-            <tbody>
+          <div style={{ height: '360px', overflowY: 'auto', paddingRight: '4px' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+              <thead style={{ position: 'sticky', top: 0, background: 'var(--bg-main)', zIndex: 10 }}>
+                <tr>
+                  <th style={{ textAlign: 'left', color: 'var(--text-muted)', fontSize: '0.8rem', padding: '8px 0', borderBottom: '1px solid var(--border-card)' }}>Price</th>
+                  <th style={{ textAlign: 'right', color: 'var(--text-muted)', fontSize: '0.8rem', padding: '8px 0', borderBottom: '1px solid var(--border-card)' }}>Volume</th>
+                </tr>
+              </thead>
+              <tbody>
               {bids.length === 0 ? (
                 <tr><td colSpan="2" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)', fontStyle: 'italic' }}>Waiting...</td></tr>
               ) : bids.map((bid, i) => {
@@ -48,6 +49,7 @@ export default function OrderBook({ bids, asks }) {
               })}
             </tbody>
           </table>
+          </div>
         </div>
 
         {/* ASKS COLUMN */}
@@ -55,14 +57,15 @@ export default function OrderBook({ bids, asks }) {
           <div style={{ padding: '8px', textAlign: 'center', background: 'var(--sell-bg)', color: 'var(--sell-color)', borderRadius: '6px', marginBottom: '12px', fontWeight: '600', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
             ASKS (SELL)
           </div>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr>
-                <th style={{ textAlign: 'left', color: 'var(--text-muted)', fontSize: '0.8rem', padding: '8px 0', borderBottom: '1px solid var(--border-card)' }}>Price</th>
-                <th style={{ textAlign: 'right', color: 'var(--text-muted)', fontSize: '0.8rem', padding: '8px 0', borderBottom: '1px solid var(--border-card)' }}>Volume</th>
-              </tr>
-            </thead>
-            <tbody>
+          <div style={{ height: '360px', overflowY: 'auto', paddingRight: '4px' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+              <thead style={{ position: 'sticky', top: 0, background: 'var(--bg-main)', zIndex: 10 }}>
+                <tr>
+                  <th style={{ textAlign: 'left', color: 'var(--text-muted)', fontSize: '0.8rem', padding: '8px 0', borderBottom: '1px solid var(--border-card)' }}>Price</th>
+                  <th style={{ textAlign: 'right', color: 'var(--text-muted)', fontSize: '0.8rem', padding: '8px 0', borderBottom: '1px solid var(--border-card)' }}>Volume</th>
+                </tr>
+              </thead>
+              <tbody>
               {asks.length === 0 ? (
                 <tr><td colSpan="2" style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)', fontStyle: 'italic' }}>Waiting...</td></tr>
               ) : asks.map((ask, i) => {
@@ -76,6 +79,7 @@ export default function OrderBook({ bids, asks }) {
               })}
             </tbody>
           </table>
+          </div>
         </div>
 
       </div>

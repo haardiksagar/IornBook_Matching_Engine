@@ -7,7 +7,7 @@ import TradesFeed from './components/TradesFeed';
 import DepthChart from './components/DepthChart';
 
 export default function Dashboard() {
-  const { bids, asks } = useOrderBook(15);
+  const { bids, asks } = useOrderBook(50);
   const { trades, isConnected } = useTrades(50);
 
   return (
