@@ -23,11 +23,8 @@ export default function Dashboard() {
           WebkitTextFillColor: 'transparent',
           letterSpacing: '-0.02em'
         }}>
-          IronBook Dashboard
+          Iron Book Matching Engine
         </h1>
-        <p style={{ color: 'var(--text-muted)', marginTop: '10px', fontSize: '1.1rem' }}>
-          Ultra-low latency limit order book • LMAX Disruptor Architecture
-        </p>
       </div>
 
       <StatsBar bids={bids} asks={asks} trades={trades} />
