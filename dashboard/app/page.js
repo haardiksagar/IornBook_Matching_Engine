@@ -23,8 +23,11 @@ export default function Dashboard() {
           WebkitTextFillColor: 'transparent',
           letterSpacing: '-0.02em'
         }}>
-          Iron Book Matching Engine
+          IronBook
         </h1>
+        <p style={{ color: 'var(--text-muted)', marginTop: '10px', fontSize: '1.1rem' }}>
+          Trade matching engine
+        </p>
       </div>
 
       <StatsBar bids={bids} asks={asks} trades={trades} />
