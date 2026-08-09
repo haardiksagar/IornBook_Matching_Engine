@@ -274,6 +274,17 @@ This measures the core matching logic in complete isolation (no network, no thre
 *   **Latency (Lookup):** `~2.6 nanoseconds` per operation.
 *   **Theoretical Engine Capacity:** Assuming a full order match (insert + match logic) takes a conservative `~50 nanoseconds`, the single-threaded Sequencer has a theoretical ceiling of **20,000,000 (20 Million) orders per second** before hitting physical CPU limits. (We conservatively rate the core at 5 to 10 Million ops/sec to leave headroom for garbage collection).
 
+**What happens in those ~50 nanoseconds?**
+Within this fraction of a microsecond, the core `OrderBook` logic successfully executes:
+1. **Look-Up:** Queries the `TreeMap` for the best opposite price (`O(log n)`).
+2. **Price Check:** Compares the buy/sell prices to verify a cross.
+3. **Time-Priority Check:** Retrieves the exact order from the `LinkedList` that arrived first.
+4. **Execution:** Calculates the matched volume and subtracts shares.
+5. **Memory Clean-Up:** If the resting order is filled, deletes it from the `LinkedList` and `HashMap`.
+6. **Trade Generation:** Creates an immutable `Trade` record object.
+7. **Resting the Remainder:** If partially filled, inserts the remainder into the `TreeMap` (`O(log n)`).
+8. **Indexing:** Saves the resting order in the `HashMap` for `O(1)` cancellations.
+
 **Run it yourself:**
 ```bash
 $env:JAVA_HOME = "C:\Program Files\Java\jdk-21.0.10"; ./mvnw compile exec:java -pl engine "-Dexec.mainClass=com.ironbook.matching_engine.Benchmark.OrderBookBenchmark"
