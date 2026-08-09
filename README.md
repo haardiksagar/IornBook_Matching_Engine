@@ -274,6 +274,11 @@ This measures the core matching logic in complete isolation (no network, no thre
 *   **Latency (Lookup):** `~2.6 nanoseconds` per operation.
 *   **Theoretical Engine Capacity:** Assuming a full order match (insert + match logic) takes a conservative `~50 nanoseconds`, the single-threaded Sequencer has a theoretical ceiling of **20,000,000 (20 Million) orders per second** before hitting physical CPU limits. (We conservatively rate the core at 5 to 10 Million ops/sec to leave headroom for garbage collection).
 
+**Run it yourself:**
+```bash
+$env:JAVA_HOME = "C:\Program Files\Java\jdk-21.0.10"; ./mvnw compile exec:java -pl engine "-Dexec.mainClass=com.ironbook.matching_engine.Benchmark.OrderBookBenchmark"
+```
+
 ### 2. Concurrent Pipeline (Real-world Simulation)
 This measures the full producer-consumer pipeline where multiple threads (simulating TCP workers) push orders into the `LinkedBlockingQueue` concurrently, while the sequencer thread drains and processes them.
 

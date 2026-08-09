@@ -120,7 +120,7 @@ public class OrderBookBenchmark {
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(OrderBookBenchmark.class.getSimpleName())
-                .forks(1)
+                .forks(0)
                 .warmupIterations(3)
                 .measurementIterations(5)
                 .build();
