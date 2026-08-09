@@ -231,8 +231,9 @@ cd IornBook-Matching-Engine
 # Build and run tests
 ./mvnw test
 
-# Run the application
-./mvnw spring-boot:run
+# Run the application (Web Backend)
+# If your default terminal uses an older Java, specify JDK 21 like this:
+$env:JAVA_HOME = "C:\Program Files\Java\jdk-21.0.10"; ./mvnw spring-boot:run -pl web
 ```
 
 ### Connect a client (using telnet or netcat)
@@ -294,11 +295,11 @@ A standalone benchmarking tool that simulates multiple trading clients connectin
 ### Quick Start
 
 ```bash
-# Terminal 1: Start the engine + TCP server
-./mvnw compile exec:java -Dexec.mainClass="com.ironbook.matching_engine.MatchingEngineApplication"
+# Terminal 1: Start the Spring Boot backend
+$env:JAVA_HOME = "C:\Program Files\Java\jdk-21.0.10"; ./mvnw spring-boot:run -pl web
 
 # Terminal 2: Run the load generator (5 clients × 1,000 orders at full speed)
-./mvnw compile exec:java -Dexec.mainClass="com.ironbook.matching_engine.LoadGenerator"
+$env:JAVA_HOME = "C:\Program Files\Java\jdk-21.0.10"; ./mvnw compile exec:java -pl engine "-Dexec.mainClass=com.ironbook.matching_engine.LoadGen.LoadGenerator"
 ```
 
 ### CLI Options
@@ -362,7 +363,7 @@ All clients connected. Firing!
 
 ## ?? Next.js Live Dashboard (TICKET-21)
 To view the premium visual dashboard:
-1. Start the Spring Boot backend: `./mvnw spring-boot:run -pl web`
+1. Start the Spring Boot backend: `$env:JAVA_HOME = "C:\Program Files\Java\jdk-21.0.10"; ./mvnw spring-boot:run -pl web`
 2. Start the dashboard in a new terminal: `cd dashboard && npm run dev`
 3. Open `http://localhost:3000`
 4. Run the LoadGenerator to watch the dashboard light up!
