@@ -1,3 +1,4 @@
+// Copyright (c) 2026 Haardik Sagar. Licensed under MIT.
 import { useState, useEffect } from 'react';
 import SockJS from 'sockjs-client';
 import { Client } from '@stomp/stompjs';

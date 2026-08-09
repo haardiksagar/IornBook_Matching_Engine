@@ -1,4 +1,5 @@
 'use client';
+// Copyright (c) 2026 Haardik Sagar. Licensed under MIT.
 import { useOrderBook } from './hooks/useOrderBook';
 import { useTrades } from './hooks/useTrades';
 import StatsBar from './components/StatsBar';

@@ -1,3 +1,4 @@
+// Copyright (c) 2026 Haardik Sagar. Licensed under MIT.
 import { useState, useEffect } from 'react';
 
 export function useOrderBook(levels = 15) {

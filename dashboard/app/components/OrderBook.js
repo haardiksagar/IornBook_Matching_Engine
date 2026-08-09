@@ -1,4 +1,5 @@
 'use client';
+// Copyright (c) 2026 Haardik Sagar. Licensed under MIT.
 
 function maxVolume(levels) {
   return levels.reduce((max, level) => Math.max(max, level.volume), 0);

@@ -1,4 +1,5 @@
 'use client';
+// Copyright (c) 2026 Haardik Sagar. Licensed under MIT.
 
 export default function StatsBar({ bids, asks, trades }) {
   const bestBid = bids.length > 0 ? bids[0].price : 0;

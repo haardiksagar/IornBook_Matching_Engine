@@ -1,3 +1,4 @@
+// Copyright (c) 2026 Haardik Sagar. Licensed under MIT.
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 

@@ -1,4 +1,5 @@
 'use client';
+// Copyright (c) 2026 Haardik Sagar. Licensed under MIT.
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function DepthChart({ bids, asks }) {

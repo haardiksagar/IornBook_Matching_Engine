@@ -1,4 +1,5 @@
 'use client';
+// Copyright (c) 2026 Haardik Sagar. Licensed under MIT.
 import { useEffect, useRef } from 'react';
 
 export default function TradesFeed({ trades, isConnected }) {
