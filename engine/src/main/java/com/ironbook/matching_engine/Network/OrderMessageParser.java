@@ -12,7 +12,7 @@ import com.ironbook.matching_engine.Model.Side;
  *
  * Deliberately does NOT touch OrderBook, MatchingEngine, or sockets -
  * its only job is text-in, structured-object-out. This keeps it easy
- * to unit test on its own
+ * to unit test on its own.
  */
 public class OrderMessageParser {
 
