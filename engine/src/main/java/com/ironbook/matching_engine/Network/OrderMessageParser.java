@@ -3,7 +3,7 @@ package com.ironbook.matching_engine.Network;
 
 import com.ironbook.matching_engine.Model.Side;
 
-/*
+/**
  * Parses raw text lines from a client into a structured message.
  *
  * Format:
