@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import com.ironbook.matching_engine.Model.Snapshot;
 
-/**
+/*
  * The central orchestrator. Ties OrderBook, WriteAheadLog, and
  * LogReplayer together behind a SINGLE-THREADED SEQUENCER.
  *
