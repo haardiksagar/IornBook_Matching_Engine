@@ -6,7 +6,7 @@ import com.ironbook.matching_engine.Model.Side;
 
 import java.util.concurrent.CountDownLatch;
 
-/**
+/*
  * Represents a single unit of work to be processed by the sequencer
  * thread. TCP client threads NEVER touch the OrderBook directly -
  * they construct an EngineCommand and drop it into the shared queue.
