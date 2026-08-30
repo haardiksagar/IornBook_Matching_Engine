@@ -18,7 +18,7 @@ public class OrderMessageParser {
 
     // An enum here works like a fixed, named set of options - similar
     // to how Side is only ever BUY or SELL, a message can only ever
-    // be one of these two kinds, nothing else is valid
+    // be one of these two kinds, nothing else is valid.
     public enum MessageType {
         NEW_ORDER,
         CANCEL
