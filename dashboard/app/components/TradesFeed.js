@@ -14,7 +14,7 @@ export default function TradesFeed({ trades, isConnected }) {
           <div className="live-dot" style={{ backgroundColor: isConnected ? 'var(--accent-color)' : 'var(--text-muted)', boxShadow: isConnected ? '0 0 8px var(--accent-color)' : 'none' }} />
           Recent Trades
         </h2>
-        <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>WebSocket Stream</span>
+
       </div>
 
       <div style={{ overflowY: 'auto', flex: 1, paddingRight: '8px' }}>

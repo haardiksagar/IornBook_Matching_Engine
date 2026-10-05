@@ -18,7 +18,7 @@ export default function OrderBook({ bids, asks }) {
           <div className="live-dot" />
           Live Order Book
         </h2>
-        <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>REST Snapshot</span>
+
       </div>
 
       <div style={{ display: 'flex', gap: '24px', flex: 1 }}>
